@@ -1,0 +1,90 @@
+<html>
+
+<head>
+	<title> What Next App by mansi </title>
+	<style>
+		* {font-size:50px;}
+		body{background-image:url("https://th.bing.com/th/id/R.3bcb9885029ffb81f58fb4a46c6d854f?rik=caTmTHH%2bNuWv1w&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f8%2fd%2f1%2f798741-download-free-awesome-nature-backgrounds-1920x1080-for-tablet.jpg&ehk=%2fu8xawhlqhlABfauhjBvJm3YUpEq5Vjqj2FfHAGm%2bj8%3d&risl=&pid=ImgRaw&r=0");}
+		h1(color:white;}
+		
+
+		</style>
+		<script>
+		function show()
+		{
+			event.preventDefault();
+			let name= document.getElementById("name");
+			let job= document.getElementById("job");
+			let ms= document.getElementById("ms");
+			let mba= document.getElementById("mba");
+			let ans = document.getElementById("ans");
+
+			if (name.value == "")
+			{
+				alert("name is empty");
+				ans.innerHTML= "";
+				name.focus();
+				return;
+			}
+
+
+			else if(name.value.trim()=="")
+			{
+				alert("name cannot be spaces");
+				ans.innerHTML="";
+				name.value="";
+				name.focus();
+				return;
+		}
+
+			else if (!name.value.match(/^[A-za-z]+$/))
+			{
+
+				alert("name should contain only alpha");
+				ans.innerHTML="";
+				name.value="";
+				name.focus();
+				return;	
+			
+			}
+
+			let choice="";
+			if(job.checked)	choice= "Job";
+			else if(ms.checked)		choice= "MS";
+			else			choice="MBA";
+
+			let msg="name="+name.value + "choice ="+ choice;
+			ans.innerHTML=msg;
+
+		}
+		</script>
+	</head>
+
+
+	<body>
+	<center>
+		<h1> What Next </h1>
+		<form onsubmit="show()">
+			<input type="text" placeholder="enter the name"id="name"/>
+		
+			<br><br>
+
+			<input type="radio"name="c"id="job" checked=true/>Job
+	
+			<input type="radio"name="c"id="ms"/>MS
+			<input type="radio"name="c"id="mba"/>MBA
+			
+			<br><br>
+			<input type="submit"/>
+		</form>
+		<h1 id="ans"/>
+	</center>
+	</body>
+
+
+	</html>
+
+
+
+
+			
